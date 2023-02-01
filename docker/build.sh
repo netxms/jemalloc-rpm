@@ -2,9 +2,12 @@
 
 set -e
 
-mock -r rocky+epel-8-$(arch) --spec SPECS/*.spec --sources SOURCES
-mock -r rocky+epel-9-$(arch) --spec SPECS/*.spec --sources SOURCES
-mock -r fedora-36-$(arch) --spec SPECS/*.spec --sources SOURCES
-mock -r fedora-37-$(arch) --spec SPECS/*.spec --sources SOURCES
+for V in 8 9; do
+   mock -r rocky+epel-$V-$(arch) --spec SPECS/*.spec --sources SOURCES
+done
+
+for V in 36 37; do
+   mock -r fedora-$V-$(arch) --spec SPECS/*.spec --sources SOURCES
+done
 
 cp /var/lib/mock/*/result/*.rpm /result/
