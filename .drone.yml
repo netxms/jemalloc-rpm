@@ -67,10 +67,9 @@ trigger:
 
 depends_on:
     - build-amd64
-    - build-arm64
 
 ---
 kind: signature
-hmac: bdf80728a486538aecf99c6a65f86a383e84fe5f60da251b1fa57ef07698e8ad
+hmac: f08cd6342ac2474a9ca9b503f5e4c4cbaa4438b5a6f7b9f6f515b93a598d4a00
 
 ...
